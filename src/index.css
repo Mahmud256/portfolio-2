@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes jumpAnimation {
+  40% {
+    transform: translateY(-5%);
+  }
+}
+
+.animate-jump {
+  animation: jumpAnimation 2s infinite;
+}
+
+@keyframes bgRotate {
+  0%,
+  100% {
+    transform: rotate(11.163deg);
+  }
+
+  50% {
+    transform: rotate(-11.163deg);
+  }
+}
+
+.animate-rotate {
+  animation: bgRotate 10s infinite linear;
+}
+
+
+/* .banner-container {
+    position: relative;
+    width: 200px; 
+    height: 200px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+} */
+
+/*.rotating-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background-color: red;
+    animation: rotateBackground 10s linear infinite;
+    z-index: -1;
+    border-radius: 20px;
+}
+
+.banner-image {
+    position: relative;
+    z-index: 1;
+    width: 100%; 
+    height: auto;
+    border-radius: 20px;
+} */
+
