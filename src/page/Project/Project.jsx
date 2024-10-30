@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+// In Project.js
+import React, { useContext } from 'react';
 import img1 from '../../assets/banner-1.png';
 import img2 from '../../assets/banner-2.jpg';
 import img3 from '../../assets/banner-3.jpeg';
@@ -7,7 +8,7 @@ import img5 from '../../assets/banner-5.png';
 import img6 from '../../assets/banner-6.png';
 import ThemeContext from '../../providers/ThemeContext';
 
-const Project = () => {;
+const Project = () => {
     const { themeColor, darkMode } = useContext(ThemeContext);
 
     const projects = [
@@ -20,32 +21,33 @@ const Project = () => {;
     ];
 
     return (
-        <div id="project" className="py-10">
+        <div id="project" className="px-8 mt-36">
             <div className="text-center mb-10">
                 <h2 className="text-2xl font-bold text-[#fd6e0a] dark:text-[#fdb74d]">Projects</h2>
                 <h2 className={`text-4xl font-bold ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>My Amazing Projects</h2>
             </div>
-            {/* ${darkMode === 'dark' ? 'text-[#de42fd]' : ''} */}
+
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 lg:mx-14">
                 {projects.map((project) => (
-                    
                     <div
                         key={project.id}
+                        data-aos="fade-up" // AOS attribute for animation
+                        data-aos-delay={project.id * 100} // Stagger the animations
                         className={`card card-compact w-96 border ${darkMode === 'dark'
-                                ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
-                                : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
+                            ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
+                            : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                             } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`}
-                   >
+                    >
                         <figure className="overflow-hidden">
                             <img
-                                className="rounded-md w-full h-40 object-cover transform transition-transform duration-500 hover:scale-110"
+                                className="w-full h-40 object-cover transform transition-transform duration-500 hover:scale-110"
                                 src={project.img}
                                 alt={project.title}
                             />
                         </figure>
                         <div className="card-body p-4 text-center">
                             <h2 className={`card-title text-lg font-semibold ${themeColor}`}>{project.title}</h2>
-                            <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                            <p className={`text-sm ${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                                 Explore this project to see innovative solutions in {project.title.toLowerCase()}.
                             </p>
                             <div className="card-actions justify-center mt-3">
@@ -53,7 +55,7 @@ const Project = () => {;
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`btn ${darkMode ? 'bg-[#fdb74d] text-[#15295f]' : 'bg-[#fd6e0a] text-white'
+                                    className={`btn ${darkMode === 'dark' ? 'bg-[#fdb74d] text-[#15295f]' : 'bg-[#fd6e0a] text-white'
                                         } hover:bg-opacity-90 font-semibold px-5 py-2 rounded-md transition duration-300`}
                                 >
                                     Visit Now

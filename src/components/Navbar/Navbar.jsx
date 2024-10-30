@@ -19,7 +19,7 @@ const Navbar = () => {
             smooth={true}
             offset={-50}
             duration={500}
-            containerId="main-scroll-container" // Specify the scroll container
+            // containerId="main-scroll-container" // Specify the scroll container
             spy={true} // Watches for the element position to change styles on scroll
         >
             <li
@@ -42,7 +42,7 @@ const Navbar = () => {
                 <NavItem to="home" label="Home" />
                 <NavItem to="services" label="Services" />
                 <NavItem to="project" label="Projects" />
-                <NavItem to="skills" label="Skills" />
+                <NavItem to="skill" label="Skills" />
                 <NavItem to="education" label="Education" />
                 <NavItem to="experience" label="Experience" />
                 <NavItem to="contact" label="Contact" />

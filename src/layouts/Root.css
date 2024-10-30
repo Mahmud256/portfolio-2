@@ -1,25 +1,40 @@
-/* Custom scrollbar styles for dynamic color */
-.middle-container::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .middle-container::-webkit-scrollbar-track {
-    background: transparent; /* You can keep this transparent or a light color */
-  }
-  
-  .middle-container::-webkit-scrollbar-thumb {
-    background-color: var(--dynamic-scrollbar-color, #888); /* Use a CSS variable for the theme color */
-    border-radius: 10px;
-    border: 2px solid transparent;
-  }
-  
-  .middle-container::-webkit-scrollbar-thumb:hover {
-    background-color: var(--dynamic-scrollbar-color, #555); /* Darken the scrollbar thumb on hover */
-  }
-  
-  /* For Firefox */
-  .middle-container {
-    scrollbar-width: thin;
-    scrollbar-color: var(--dynamic-scrollbar-color, #888) transparent;
-  }
-  
+
+  /* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar color */
+  /* background-color: var(--dynamic-scrollbar-color); */
+  /*border-radius: 10px; /* Round edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Scrollbar color on hover */
+}
+
+/* Root.css */
+
+.middle-container {
+  scrollbar-width: thin;
+  scrollbar-color: var(--dynamic-scrollbar-color) transparent;
+}
+
+/* For Chrome, Edge, and Safari */
+/* .middle-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.middle-container::-webkit-scrollbar-thumb {
+  background-color: var(--dynamic-scrollbar-color);
+  border-radius: 10px;
+}
+
+.middle-container::-webkit-scrollbar-track {
+  background-color: transparent;
+} */
