@@ -18,8 +18,8 @@ const Home = () => {
             themeColor.includes('orange') ? '#f97316' : '#888';
 
     return (
-        <div id="home" className={` ${darkMode === 'dark' ? 'bg-gray-900 text-white' : 'bg-neutral-50 text-gray-900'}`}>
-            <div className='p-8 border-8'>
+        <div id="home" className={`${darkMode === 'dark' ? 'bg-gray-900 text-white' : 'bg-neutral-50 text-gray-900'}`}>
+            <div className='p-8'>
                 <div className='flex items-center justify-between'>
                     <div className='w-1/2 flex flex-col gap-2'>
                         <h1 className="text-3xl font-bold">HI, I'M A FREELANCER</h1>

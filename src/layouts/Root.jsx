@@ -18,7 +18,7 @@ const Root = () => (
   <ThemeProvider>
     <ThemeContext.Consumer>
       {({ darkMode, themeColor, colorMap }) => (
-        <div className="h-screen flex transition-colors duration-300">
+        <div className=" flex transition-colors duration-300 border-8 animate-border ">
           {/* Side Bar */}
           <div className="flex fixed h-full">
             <div className="w-auto p-6 items-center">
