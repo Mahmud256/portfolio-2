@@ -19,6 +19,7 @@ const Root = () => (
     <ThemeContext.Consumer>
       {({ darkMode, themeColor, colorMap }) => (
         <div className="h-screen flex transition-colors duration-300">
+          {/* Side Bar */}
           <div className="flex fixed h-full">
             <div className="w-auto p-6 items-center">
               <ThemeToggle />
@@ -35,41 +36,48 @@ const Root = () => (
               <Navbar />
             </div>
           </div>
-          <div
-            id="main-scroll-container" // Added id for scroll container
-            className={`bal ml-96 middle-container max-h-screen w-full ${darkMode === 'dark' ? 'bg-gray-900 text-white' : 'bg-neutral-50 text-gray-900'}`}
-            style={{
-              scrollbarColor: `${themeColor} transparent`,
-              '--dynamic-scrollbar-color': colorMap[themeColor],
-            }}
-          >
+          {/* main Bar */}
+          <div className="flex-1 ml-96 middle-container w-full " style={{
+            scrollbarColor: `${themeColor} transparent`,
+            '--dynamic-scrollbar-color': colorMap[themeColor],
+          }}>
 
-            <Outlet />
-            <div className="pb-10">
+
+            <div className="">
+              <div className="max-w-screen-xl mx-auto">
+                <Outlet />
+              </div>
+            </div>
+            {/* <div className="p-8">
+              <div className="max-w-screen-xl mx-auto">
+                <Home />
+              </div>
+            </div>
+            <div className="p-8">
               <div className="max-w-screen-xl mx-auto">
                 <Project />
               </div>
             </div>
-            <div className="pb-10">
+            <div className="">
               <div className="max-w-screen-xl mx-auto">
                 <Skill />
               </div>
             </div>
-            <div className="pb-10">
+            <div className="">
               <div className="max-w-screen-xl mx-auto">
                 <Education />
               </div>
             </div>
-            <div className="pb-10">
+            <div className="">
               <div className="max-w-screen-xl mx-auto">
                 <Experience />
               </div>
             </div>
-            <div className="pb-10">
+            <div className="">
               <div className="max-w-screen-xl mx-auto">
                 <Contact />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

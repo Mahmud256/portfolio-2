@@ -22,7 +22,7 @@ const Project = () => {
     return (
         <div  
             data-aos="fade-up" // AOS attribute for animation
-            id="project" className="px-8 mt-36">
+            id="project">
             <div className="text-center mb-10">
                 <h2 className="text-2xl font-bold text-[#fd6e0a] dark:text-[#fdb74d]">Projects</h2>
                 <h2 className={`text-4xl font-bold ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>My Amazing Projects</h2>
