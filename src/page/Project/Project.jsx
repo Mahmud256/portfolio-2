@@ -1,4 +1,3 @@
-// In Project.js
 import React, { useContext } from 'react';
 import img1 from '../../assets/banner-1.png';
 import img2 from '../../assets/banner-2.jpg';
@@ -21,7 +20,9 @@ const Project = () => {
     ];
 
     return (
-        <div id="project" className="px-8 mt-36">
+        <div  
+            data-aos="fade-up" // AOS attribute for animation
+            id="project" className="px-8 mt-36">
             <div className="text-center mb-10">
                 <h2 className="text-2xl font-bold text-[#fd6e0a] dark:text-[#fdb74d]">Projects</h2>
                 <h2 className={`text-4xl font-bold ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>My Amazing Projects</h2>
@@ -31,7 +32,7 @@ const Project = () => {
                 {projects.map((project) => (
                     <div
                         key={project.id}
-                        data-aos="fade-up" // AOS attribute for animation
+                        data-aos={project.id % 2 == 0 ? "flip-right" : "flip-left"} // Alternate animation based on id
                         data-aos-delay={project.id * 100} // Stagger the animations
                         className={`card card-compact w-96 border ${darkMode === 'dark'
                             ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'

@@ -10,6 +10,9 @@ import Navbar from '../components/Navbar/Navbar';
 import Project from '../page/Project/Project';
 import Skill from '../page/Skill/Skill';
 import Home from '../components/Home/Home';
+import Education from '../page/Education/Education';
+import Experience from '../page/Experience/Experience';
+import Contact from '../page/Contact/Contact';
 
 const Root = () => (
   <ThemeProvider>
@@ -50,6 +53,21 @@ const Root = () => (
             <div className="pb-10">
               <div className="max-w-screen-xl mx-auto">
                 <Skill />
+              </div>
+            </div>
+            <div className="pb-10">
+              <div className="max-w-screen-xl mx-auto">
+                <Education />
+              </div>
+            </div>
+            <div className="pb-10">
+              <div className="max-w-screen-xl mx-auto">
+                <Experience />
+              </div>
+            </div>
+            <div className="pb-10">
+              <div className="max-w-screen-xl mx-auto">
+                <Contact />
               </div>
             </div>
           </div>

@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { FaGithub, FaFacebook, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-
-
-
 const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',

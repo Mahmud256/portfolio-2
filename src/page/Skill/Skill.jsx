@@ -13,7 +13,7 @@ const Skill = () => {
     ];
 
     return (
-        <div id='skill' className='px-8 mt-36'>
+        <div id='skill' className='px-8 mt-36'data-aos="zoom-in">
 
             <h2 className="text-center text-4xl font-bold text-[#15295f] dark:text-[#416fee] py-10 px-6">My Skills</h2>
             <div className="max-w-md grid grid-cols-2 gap-4 mx-auto mb-8 p-8 bg-[#fdf8f7] border dark:bg-[#111111] rounded-lg shadow-md">
