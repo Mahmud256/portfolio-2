@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FaGithub, FaFacebook, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import ThemeContext from '../../providers/ThemeContext';
 
 const Contact = () => {
+
+    const { darkMode, themeColor } = useContext(ThemeContext);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -20,39 +24,39 @@ const Contact = () => {
     };
 
     return (
-        <div id='contact'>
-            <div>
-                <h1 className="text-center text-4xl font-bold text-[#15295f] dark:text-[#416fee]  pb-10">Contact me</h1>
-                <div className='flex justify-center'>
-                    <form className='w-1/2 bg-white border dark:bg-[#1d232a] p-10' onSubmit={handleSubmit}>
-                        <div className="mb-4">
-                            <label htmlFor="name" className="block text-gray-700 font-bold mb-2 dark:text-[#bbc2d6]">
-                                Your name
-                            </label>
+        <div data-aos="fade-up"
+            id='contact' className='pb-20'>
+            <div className={`max-w-md mx-auto p-4 border shadow-md ${darkMode === 'dark'
+                    ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
+                    : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
+                    } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`}>
+                <h1 className={`text-4xl text-center font-bold pb-4 ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>Contact me</h1>
+                <div className=''>
+                    <form className='' onSubmit={handleSubmit}>
+                        <div className="flex gap-2">
+                            
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
+                                placeholder="Your Name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full border p-2"
                                 required
                             />
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-gray-700 font-bold mb-2 dark:text-[#bbc2d6]">
-                                Your email
-                            </label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
+                                placeholder="Your Email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full border p-2"
                                 required
                             />
                         </div>
+                        
                         <div className="mb-4">
                             <label htmlFor="message" className="block text-gray-700 font-bold mb-2 dark:text-[#bbc2d6]">
                                 Message
@@ -93,8 +97,8 @@ const Contact = () => {
                     </div>
                 </div>
                 <aside className="text-center py-10">
-                <p className='text-[#39464d] dark:text-[#bbc2d6]'>© Developed by Mahmudul Hasan Sarkar</p>
-            </aside>
+                    <p className='text-[#39464d] dark:text-[#bbc2d6]'>© Developed by Mahmudul Hasan Sarkar</p>
+                </aside>
             </div>
         </div>
     );

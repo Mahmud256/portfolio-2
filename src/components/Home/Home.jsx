@@ -10,7 +10,7 @@ import Experience from '../../page/Experience/Experience';
 import Contact from '../../page/Contact/Contact';
 
 const Home = () => {
-    const {  darkMode, themeColor, colorMap } = useContext(ThemeContext);
+    const {  darkMode, themeColor } = useContext(ThemeContext);
 
     // Determine the button background color based on themeColor
     const bgColor = themeColor.includes('blue') ? '#3b82f6' :
@@ -34,8 +34,8 @@ const Home = () => {
                                 displayTextRenderer={(text, i) => <span>{text}</span>} // optional for custom rendering
                             />
                         </h1>
-                        <p>I'm a software engineer specializing in scalable web apps. Explore my blog, project portfolio, and online resume.</p>
-                        <div className='flex gap-5'>
+                        <p className={`text-sm ${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>I'm a software engineer specializing in scalable web apps. Explore my blog, project portfolio, and online resume.</p>
+                        <div className='flex gap-5 mt-2'>
                             <button
                                 className="rounded-2xl border-2 border-dashed border-black px-6 py-3 font-semibold uppercase transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none"
                                 style={{
@@ -48,7 +48,11 @@ const Home = () => {
                                 View Portfolio
                             </button>
                             <button
-                                className="rounded-2xl border-2 border-dashed px-6 py-3 font-semibold uppercase transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none"
+                                className={`rounded-2xl border-2 
+                                border-dashed px-6 py-3 font-semibold 
+                                uppercase transition-all duration-300 
+                                hover:translate-x-[-4px] 
+                                hover:translate-y-[-4px] hover:rounded-md active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none ${themeColor}`}
                                 style={{
                                     color: bgColor,
                                     borderColor: bgColor,
@@ -66,7 +70,7 @@ const Home = () => {
                         <img src={Banner} alt="Banner" className='blo w-1/2 relative' />
                     </div>
                 </div>
-                <Exp bgColor={bgColor} />
+                <Exp bgColor={bgColor} darkMode={darkMode} />
             </div>
 
 
@@ -81,7 +85,7 @@ const Home = () => {
             </div>
             <div className="">
                 <div className="max-w-screen-xl mx-auto">
-                    <Skill />
+                    <Skill bgColor={bgColor} darkMode={darkMode}/>
                 </div>
             </div>
             <div className="">

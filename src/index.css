@@ -27,16 +27,39 @@
   animation: bgRotate 10s infinite linear;
 }
 
-
-@keyframes borderColor {
-  0% { border-color: red; }
-  25% { border-color: blue; }
-  50% { border-color: green; }
-  75% { border-color: yellow; }
-  100% { border-color: red; }
+@keyframes lineSlide {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
-.animate-border {
-  animation: borderColor 4s infinite;
+.underline {
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
 }
+
+.underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  background-color: currentColor; /* Uses the current text color */
+  animation: lineSlide 1.5s ease forwards;
+  opacity: 0;
+  width: 0;
+}
+
+
+
+
+
 

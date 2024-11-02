@@ -18,7 +18,7 @@ const Root = () => (
   <ThemeProvider>
     <ThemeContext.Consumer>
       {({ darkMode, themeColor, colorMap }) => (
-        <div className=" flex transition-colors duration-300 border-8 animate-border ">
+        <div className="flex transition-colors duration-300">
           {/* Side Bar */}
           <div className="flex fixed h-full">
             <div className="w-auto p-6 items-center">
@@ -48,36 +48,6 @@ const Root = () => (
                 <Outlet />
               </div>
             </div>
-            {/* <div className="p-8">
-              <div className="max-w-screen-xl mx-auto">
-                <Home />
-              </div>
-            </div>
-            <div className="p-8">
-              <div className="max-w-screen-xl mx-auto">
-                <Project />
-              </div>
-            </div>
-            <div className="">
-              <div className="max-w-screen-xl mx-auto">
-                <Skill />
-              </div>
-            </div>
-            <div className="">
-              <div className="max-w-screen-xl mx-auto">
-                <Education />
-              </div>
-            </div>
-            <div className="">
-              <div className="max-w-screen-xl mx-auto">
-                <Experience />
-              </div>
-            </div>
-            <div className="">
-              <div className="max-w-screen-xl mx-auto">
-                <Contact />
-              </div>
-            </div> */}
           </div>
         </div>
       )}
