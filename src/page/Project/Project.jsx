@@ -19,8 +19,13 @@ const Project = () => {
         { id: 6, title: 'Summer Sale', img: img6, link: 'https://mahmud256-assignment-5.netlify.app/' },
     ];
 
+    // Determine the button background color based on themeColor
+    const bgColor = themeColor.includes('blue') ? '#3b82f6' :
+        themeColor.includes('pink') ? '#ec4899' :
+            themeColor.includes('orange') ? '#f97316' : '#888';
+
     return (
-        <div  
+        <div
             data-aos="fade-up" // AOS attribute for animation
             id="project" className='mt-20'>
             <div className="text-center mb-10">
@@ -36,7 +41,7 @@ const Project = () => {
                         className={`card card-compact w-96 border ${darkMode === 'dark'
                             ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                             : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
-                            } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`}
+                            } shadow-lg transform transition-transform duration-500 hover:scale-110 hover:shadow-xl`}
                     >
                         <figure className="overflow-hidden">
                             <img
@@ -50,13 +55,17 @@ const Project = () => {
                             <p className={`text-sm ${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                                 Explore this project to see innovative solutions in {project.title.toLowerCase()}.
                             </p>
-                            <div className="card-actions justify-center mt-3">
+                            <div className="card-actions justify-center mt-3 transform transition-transform duration-500 hover:scale-110">
                                 <a
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className={`btn ${darkMode === 'dark' ? 'bg-[#fdb74d] text-[#15295f]' : 'bg-[#fd6e0a] text-white'
                                         } hover:bg-opacity-90 font-semibold px-5 py-2 rounded-md transition duration-300`}
+
+                                    style={{
+                                        backgroundColor: bgColor,
+                                    }}
                                 >
                                     Visit Now
                                 </a>

@@ -23,6 +23,12 @@ const Contact = () => {
         console.log(formData);
     };
 
+     // Determine the button background color based on themeColor
+     const bgColor = themeColor.includes('blue') ? '#3b82f6' :
+     themeColor.includes('pink') ? '#ec4899' :
+         themeColor.includes('orange') ? '#f97316' : '#888';
+
+
     return (
         <div data-aos="fade-up"
             id='contact' className='pb-20'>
@@ -57,8 +63,8 @@ const Contact = () => {
                             />
                         </div>
                         
-                        <div className="mb-4">
-                            <label htmlFor="message" className="block text-gray-700 font-bold mb-2 dark:text-[#bbc2d6]">
+                        <div className="my-4">
+                            <label htmlFor="message" className={`${themeColor} text-base font-semibold my-10`}>
                                 Message
                             </label>
                             <textarea
@@ -73,7 +79,12 @@ const Contact = () => {
                         </div>
                         <button
                             type="submit"
-                            className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                            className={`btn ${darkMode === 'dark' ? 'bg-[#fdb74d] text-[#15295f]' : 'bg-[#fd6e0a] text-white'
+                            } hover:bg-opacity-90 font-semibold px-5 py-2 rounded-md transition duration-300`}
+
+                            style={{
+                                backgroundColor: bgColor,
+                            }}
                         >
                             Send Message
                         </button>

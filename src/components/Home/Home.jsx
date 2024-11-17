@@ -8,6 +8,7 @@ import Skill from '../../page/Skill/Skill';
 import Education from '../../page/Education/Education';
 import Experience from '../../page/Experience/Experience';
 import Contact from '../../page/Contact/Contact';
+import Services from '../../page/Services/Services';
 
 const Home = () => {
     const {  darkMode, themeColor } = useContext(ThemeContext);
@@ -74,7 +75,11 @@ const Home = () => {
             </div>
 
 
-
+            <div className="">
+                <div className="max-w-screen-xl mx-auto">
+                    <Services />
+                </div>
+            </div>
 
 
 
