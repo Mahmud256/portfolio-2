@@ -30,10 +30,11 @@ const Profile = () => {
             </div>
             <h2 className={`text-xl font-semibold ${themeColor}`}>
                 Mahmudul Hasan Sarkar
+                <br></br>
+                <span className={`text-base font-medium ${darkMode === 'dark' ? 'text-[#de42fd]' : ''}`}>
+                Web Developer and Data Analyst
+            </span>
             </h2>
-            <p className={`text-sm ${darkMode === 'dark' ? 'text-[#de42fd]' : ''}`}>
-                Senior Software Engineer
-            </p>
         </div>
     );
 };
