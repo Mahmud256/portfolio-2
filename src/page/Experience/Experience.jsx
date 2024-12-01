@@ -10,7 +10,7 @@ const Experience = () => {
     return (
         <div id='experience'>
             <div className='flex justify-center p-20'data-aos="zoom-in">
-                <div className={`max-w-md mx-auto p-4 border shadow-md ${darkMode === 'dark'
+                <div className={`max-w-full mx-auto p-4 border shadow-md ${darkMode === 'dark'
                     ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                     : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                     } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`}>

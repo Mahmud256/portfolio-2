@@ -12,7 +12,7 @@ const Education = () => {
                 <div>
                     <h2 className={`text-4xl text-center font-bold py-10 px-6 ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>MY Education</h2>
                     <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-4 lg:mx-16'>
-                        <div className={`card card-compact w-80 border ${darkMode === 'dark'
+                        <div className={`card card-compact w-96 border ${darkMode === 'dark'
                             ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                             : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                             } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`} data-aos="flip-left">
@@ -20,7 +20,7 @@ const Education = () => {
                                 Institute of Science and Technology</h5><h6 className={`${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>BSc in Computer Science and Engineering </h6>
                                 <span className={`${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>November 2019 -  November 2024</span></div></div></div>
                         </div>
-                        <div className={`card card-compact w-80 border ${darkMode === 'dark'
+                        <div className={`card card-compact w-96 border ${darkMode === 'dark'
                             ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                             : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                             } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`} data-aos="flip-right">

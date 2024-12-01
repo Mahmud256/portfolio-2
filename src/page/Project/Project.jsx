@@ -60,7 +60,7 @@ const Project = () => {
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`btn ${darkMode === 'dark' ? 'bg-[#fdb74d] text-[#15295f]' : 'bg-[#fd6e0a] text-white'
+                                    className={`btn ${darkMode === 'dark' ? 'bg-[#fdb74d] text-white' : 'bg-[#fd6e0a] text-white'
                                         } hover:bg-opacity-90 font-semibold px-5 py-2 rounded-md transition duration-300`}
 
                                     style={{

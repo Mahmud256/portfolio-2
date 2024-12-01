@@ -72,7 +72,7 @@ const Contact = () => {
     return (
         <div data-aos="fade-up" id="contact" className="pb-20">
             <div
-                className={`max-w-md mx-auto p-4 border shadow-md transform transition-transform duration-500 hover:scale-105 hover:shadow-xl ${darkMode === 'dark'
+                className={`max-w-3xl mx-auto p-4 border shadow-md transform transition-transform duration-500 hover:scale-105 hover:shadow-xl ${darkMode === 'dark'
                     ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                     : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                     }`}
@@ -118,7 +118,7 @@ const Contact = () => {
                     </div>
                     <button
                         type="submit"
-                        className={`font-semibold px-5 py-2 rounded-md transition duration-300 ${darkMode === 'dark' ? 'bg-[#fdb74d] text-[#15295f]' : 'bg-[#fd6e0a] text-white'
+                        className={`font-semibold px-5 py-2 rounded-md transition duration-300 ${darkMode === 'dark' ? 'bg-[#fdb74d] text-white' : 'bg-[#fd6e0a] text-white'
                             }`}
                         style={{ backgroundColor: bgColor }}
                     >
@@ -155,7 +155,8 @@ const Contact = () => {
                     </a>
                 </div>
                 <aside className="text-center py-10">
-                    <p className="text-[#39464d] dark:text-[#bbc2d6]">© Developed by Mahmudul Hasan Sarkar</p>
+                    <p className={`${darkMode === 'dark' ? 'text-white' : 'text-[#39464d]'
+                        }`}>© Developed by Mahmudul Hasan Sarkar</p>
                 </aside>
             </div>
         </div>

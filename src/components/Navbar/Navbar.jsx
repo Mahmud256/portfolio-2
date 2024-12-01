@@ -47,21 +47,31 @@ const Navbar = () => {
                 <NavItem to="experience" label="Experience" />
                 <NavItem to="contact" label="Contact" />
 
-                <button
-                    className="relative flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition-all duration-300 rounded-full group bg-gradient-to-r from-red-500 to-blue-700 hover:to-red-600"
+                <Link
+                    to="contact"
+                    smooth={true}
+                    offset={-50}
+                    duration={500}
+                    spy={true}
+
                 >
-                    <span
-                        className="absolute inset-0 w-0 h-full transition-all duration-300 ease-out bg-white rounded-full group-hover:w-full"
-                        style={{
-                            backgroundColor: hoverBgColor,
-                            borderColor: hoverBgColor,
-                        }}
-                    ></span>
-                    <span className="relative flex items-center text-white transition-colors duration-300 ease-in-out">
-                        <FiSend className="mr-2" />
-                        Hire Me
-                    </span>
-                </button>
+                    <button
+
+                        className="relative flex items-center justify-center px-14 py-3 overflow-hidden font-medium text-white transition-all duration-300 rounded-full group bg-gradient-to-r from-red-500 to-blue-700 hover:to-red-600"
+                    >
+                        <span
+                            className="absolute inset-0 w-0 h-full transition-all duration-300 ease-out bg-white rounded-full group-hover:w-full"
+                            style={{
+                                backgroundColor: hoverBgColor,
+                                borderColor: hoverBgColor,
+                            }}
+                        ></span>
+                        <span className="relative flex items-center text-white transition-colors duration-300 ease-in-out">
+                            <FiSend className="mr-2" />
+                            Hire Me
+                        </span>
+                    </button>
+                </Link>
             </ul>
         </nav>
     );
