@@ -8,7 +8,8 @@ const Skill = ({ darkMode, bgColor }) => {
     setAnimate(true);
   }, []);
 
-  const skills = [
+  /* Web Development Skills */
+  const web_skills = [
     { name: "HTML", percentage: 90 },
     { name: "CSS", percentage: 80 },
     { name: "Tailwind CSS", percentage: 90 },
@@ -19,49 +20,64 @@ const Skill = ({ darkMode, bgColor }) => {
     { name: "MongoDB", percentage: 70 },
   ];
 
-  return (
-    <div id="skill" className="p-20" data-aos="zoom-in">
-      <h2
-        className={`text-4xl text-center font-bold py-10 px-6 ${
-          darkMode === "dark" ? "text-white" : "text-[#15295f]"
-        }`}
-      >
-        My Skills
-      </h2>
-      <div
-        className={`max-w-full grid grid-cols-2 gap-4 mx-auto border p-4 shadow-md ${
-          darkMode === "dark"
-            ? "bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900"
-            : "bg-gradient-to-br from-white via-gray-100 to-gray-200"
-        } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`}
-      >
+  /* Data Analyst Skills */
+  const data_skills = [
+    { name: "Python", percentage: 60 },
+    { name: "Pandas", percentage: 70 },
+    { name: "Numpy", percentage: 55 },
+    { name: "Matplotlib", percentage: 50 },
+    { name: "Seaborn", percentage: 50 },
+    { name: "Beautiful Soup", percentage: 60 },
+    { name: "Selenium", percentage: 60 },
+    { name: "Microsoft Excel", percentage: 60 },
+  ];
+
+  /* Skill Progress Component */
+  const SkillProgress = ({ skills, title }) => (
+    <div
+      className={`max-w-full mx-auto mb-10 border p-6 shadow-md rounded-lg ${darkMode === "dark"
+        ? "bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900"
+        : "bg-gradient-to-br from-white via-gray-100 to-gray-200"
+        } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl}`}
+    >
+      <h3 className="text-2xl font-semibold mb-6 text-center">{title}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {skills.map((skill, index) => (
           <div key={index} className="mb-4">
             <p className="text-sm font-medium">{skill.name}</p>
             <div className="relative pt-1">
-              <div className="flex mb-2 items-center justify-between">
-                <div>
-                  <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600">
-                    {skill.percentage}%
-                  </span>
-                </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600">
+                  {skill.percentage}%
+                </span>
               </div>
-              <div className="flex">
-                <div className={`flex-grow h-7 bg-red-200 border rounded-full`}>
-                  <div
-                    style={{
-                      width: animate ? `${skill.percentage}%` : "0%",
-                      backgroundColor: bgColor,
-                      transition: "width 10s ease-in-out",
-                    }}
-                    className="h-full rounded-full"
-                  ></div>
-                </div>
+              <div className="flex-grow h-5 bg-gray-300 rounded-full overflow-hidden">
+                <div
+                  style={{
+                    width: animate ? `${skill.percentage}%` : "0%",
+                    backgroundColor: bgColor,
+                    transition: "width 2s ease-in-out",
+                  }}
+                  className="h-full rounded-full"
+                ></div>
               </div>
             </div>
           </div>
         ))}
       </div>
+    </div>
+  );
+
+  return (
+    <div id="skill" className="p-20"  data-aos="zoom-in">
+      <h2
+        className={`text-4xl text-center font-bold mb-12 ${darkMode === "dark" ? "text-white" : "text-[#15295f]"
+          }`}
+      >
+        My Skills
+      </h2>
+      <SkillProgress skills={web_skills} title="Web Development Skills" />
+      <SkillProgress skills={data_skills} title="Data Analyst Skills" />
     </div>
   );
 };
