@@ -16,7 +16,7 @@ const Services = () => {
             title: "I will provide fast and accurate document type and retype",
             price: "$20",
             link: "https://www.fiverr.com/dm_mahmud/provide-fast-and-accurate-document-typing-services",
-            image: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/317771711/original/be93e7cbf48f6c1f0cd654d709a0560e992fd97a/provide-fast-and-accurate-document-typing-services.png",
+            image: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/317771711/original/71d64691b86dbb23c6dabfb5177e30135ba80fff/provide-fast-and-accurate-document-typing-services.png",
         },
         {
             title: "I will data analysis, cleaning and visualization by python",
