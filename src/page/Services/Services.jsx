@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import ThemeContext from '../../providers/ThemeContext';
+import useTheme from "../../hook/useTheme";
 
 const Services = () => {
-    const { themeColor, darkMode } = useContext(ThemeContext);
+    const { darkMode, themeColor, bgColor } = useTheme();
 
     // Example data for Fiverr gigs (you can fetch this dynamically if an API is available)
     const gigs = [
@@ -22,20 +21,16 @@ const Services = () => {
             title: "I will data analysis, cleaning and visualization by python",
             price: "$20",
             link: "https://www.fiverr.com/dm_mahmud/data-analysis-cleaning-and-visualization-by-python",
-            image: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/391986241/original/d9af07c1e99c6777944abd9a3b3f60943b526e03/data-analysis-cleaning-and-visualization-by-python.jpg",
+            image: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/391986241/original/715cb0c60442d2354667df87a98451efb1539558/data-analysis-cleaning-and-visualization-by-python.jpg",
         },
         {
             title: "I will be web data scraping from any website by python web scraper",
             price: "$30",
             link: "https://www.fiverr.com/dm_mahmud/be-web-data-scraping-from-any-website-by-python-web-scraper",
-            image: "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/403878887/original/cde4bb0f7e61a98993c0f21b172d8b5fa482150c/be-web-data-scraping-from-any-website-by-python-web-scraper.jpg",
+            image: "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/403878887/original/cfb553be499d48315160ecc5d2243b8489d39cd8/be-web-data-scraping-from-any-website-by-python-web-scraper.png",
         },
     ];
 
-    // Determine button and background color
-    const bgColor = themeColor.includes('blue') ? '#3b82f6' :
-        themeColor.includes('pink') ? '#ec4899' :
-            themeColor.includes('orange') ? '#f97316' : '#888';
 
     return (
 

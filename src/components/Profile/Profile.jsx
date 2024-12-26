@@ -1,20 +1,17 @@
-import { useContext } from 'react';
 import profile from '../../assets/Remove-bg.ai(1).png';
-import ThemeContext from '../../providers/ThemeContext';
+import useTheme from '../../hook/useTheme';
 
 const Profile = () => {
-    const { themeColor, darkMode } = useContext(ThemeContext);
+    const { themeColor, darkMode, bgColor } = useTheme();
 
     // Determine the profile background color based on themeColor
-    const profileBgColor = themeColor.includes('blue') ? '#3b82f6' :
-        themeColor.includes('pink') ? '#ec4899' :
-            themeColor.includes('orange') ? '#f97316' : '#888';
+   
 
     return (
         <div className="profile text-center space-y-4">
             <div
                 style={{
-                    backgroundColor: profileBgColor,
+                    backgroundColor: bgColor,
                     borderRadius: '50%',
                     width: '7rem',
                     height: '7rem',

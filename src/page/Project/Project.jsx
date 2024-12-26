@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import useTheme from '../../hook/useTheme';
 import img1 from '../../assets/banner-1.png';
 import img2 from '../../assets/banner-2.jpg';
 import img3 from '../../assets/banner-3.jpeg';
 import img4 from '../../assets/banner-4.png';
 import img5 from '../../assets/banner-5.png';
 import img6 from '../../assets/banner-6.png';
-import ThemeContext from '../../providers/ThemeContext';
+
 
 const Project = () => {
-    const { themeColor, darkMode } = useContext(ThemeContext);
+    const { darkMode, themeColor, bgColor} = useTheme();
 
     const projects = [
         { id: 1, title: 'Modern Technology and Electronics', img: img1, link: 'https://assignment-1010.netlify.app/' },
@@ -19,10 +19,6 @@ const Project = () => {
         { id: 6, title: 'Summer Sale', img: img6, link: 'https://mahmud256-assignment-5.netlify.app/' },
     ];
 
-    // Determine the button background color based on themeColor
-    const bgColor = themeColor.includes('blue') ? '#3b82f6' :
-        themeColor.includes('pink') ? '#ec4899' :
-            themeColor.includes('orange') ? '#f97316' : '#888';
 
     return (
         <div

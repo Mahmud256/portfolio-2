@@ -1,11 +1,9 @@
 // ExperienceComponent.js
-
-import React, { useContext } from 'react';
-import ThemeContext from '../../providers/ThemeContext';
+import useTheme from "../../hook/useTheme";
 
 const Experience = () => {
 
-    const { darkMode, themeColor } = useContext(ThemeContext);
+    const { darkMode} = useTheme();
 
     return (
         <div id='experience'>

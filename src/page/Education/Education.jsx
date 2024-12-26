@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
-import ThemeContext from '../../providers/ThemeContext';
+import useTheme from "../../hook/useTheme";
 
 const Education = () => {
 
-    const { darkMode, themeColor } = useContext(ThemeContext);
+    const { darkMode, themeColor} = useTheme();
 
     return (
         <div data-aos="fade-up"

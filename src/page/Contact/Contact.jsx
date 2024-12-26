@@ -1,10 +1,11 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { FaGithub, FaFacebook, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import ThemeContext from '../../providers/ThemeContext';
 import Swal from 'sweetalert2';
+import useTheme from '../../hook/useTheme';
+const VITE_web3forms_Token = import.meta.env.VITE_web3forms_Token;
 
 const Contact = () => {
-    const { darkMode = 'light', themeColor = 'blue' } = useContext(ThemeContext);
+    const { darkMode, themeColor } = useTheme();
 
     const [formData, setFormData] = useState({
         name: '',
@@ -20,7 +21,7 @@ const Contact = () => {
         event.preventDefault();
 
         const formData = new FormData(event.target);
-        formData.append('access_key', '7a415bd5-a822-46f1-a1e3-997238d32d1c'); // Use env variable
+        formData.append('access_key', VITE_web3forms_Token); // Use env variable
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
@@ -91,7 +92,8 @@ const Contact = () => {
                             placeholder="Your Name"
                             value={formData.name}
                             onChange={handleChange}
-                            className="w-full border p-2"
+                            className={`w-full border p-2 ${darkMode === 'dark' ? 'text-black' : 'text-black'
+                                }`}
                             required
                         />
                         <input
@@ -100,7 +102,8 @@ const Contact = () => {
                             placeholder="Your Email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full border p-2"
+                            className={`w-full border p-2 ${darkMode === 'dark' ? 'text-black' : 'text-black'
+                                }`}
                             required
                         />
                     </div>
@@ -111,7 +114,8 @@ const Contact = () => {
                             placeholder="Your Message"
                             value={formData.message}
                             onChange={handleChange}
-                            className="w-full border p-2"
+                            className={`w-full border p-2 ${darkMode === 'dark' ? 'text-black' : 'text-black'
+                                }`}
                             rows="4"
                             required
                         ></textarea>
