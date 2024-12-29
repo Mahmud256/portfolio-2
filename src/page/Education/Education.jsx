@@ -10,7 +10,7 @@ const Education = () => {
             <div className='flex justify-center'>
                 <div>
                     <h2 className={`text-4xl text-center font-bold py-10 px-6 ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>MY Education</h2>
-                    <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-4 lg:mx-16'>
+                    <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-16 lg:mx-16'>
                         <div className={`card card-compact w-96 border ${darkMode === 'dark'
                             ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                             : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'

@@ -73,7 +73,7 @@ const Contact = () => {
     return (
         <div data-aos="fade-up" id="contact" className="pb-20">
             <div
-                className={`max-w-3xl mx-auto p-4 border shadow-md transform transition-transform duration-500 hover:scale-105 hover:shadow-xl ${darkMode === 'dark'
+                className={`max-w-full w-[820px] mx-auto p-4 border shadow-md transform transition-transform duration-500 hover:scale-105 hover:shadow-xl ${darkMode === 'dark'
                     ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
                     : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                     }`}

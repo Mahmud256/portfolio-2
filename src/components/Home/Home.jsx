@@ -4,15 +4,11 @@ import Education from '../../page/Education/Education';
 import Experience from '../../page/Experience/Experience';
 import Contact from '../../page/Contact/Contact';
 import Services from '../../page/Services/Services';
-import useTheme from '../../hook/useTheme';
 import About from '../../page/About/About';
 
 const Home = () => {
-
-    const { darkMode, bgColor } = useTheme();
-
     return (
-        <div id="home" className={`${darkMode === 'dark' ? 'bg-gray-900 text-white' : 'bg-neutral-50 text-gray-900'}`}>
+        <div id="home" className={`flex flex-col justify-center items-center`}>
 
             <div className="">
                 <div className="max-w-screen-xl mx-auto">
@@ -26,8 +22,6 @@ const Home = () => {
                 </div>
             </div>
 
-
-
             <div className="">
                 <div className="max-w-screen-xl mx-auto">
                     <Project />
@@ -35,7 +29,7 @@ const Home = () => {
             </div>
             <div className="">
                 <div className="max-w-screen-xl mx-auto">
-                    <Skill bgColor={bgColor} darkMode={darkMode} />
+                    <Skill />
                 </div>
             </div>
             <div className="">

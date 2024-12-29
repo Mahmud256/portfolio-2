@@ -28,7 +28,7 @@ const Project = () => {
                 <h2 className={`text-4xl font-bold ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>My Amazing Projects</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 lg:mx-14">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-24 lg:mx-14">
                 {projects.map((project) => (
                     <div
                         key={project.id}

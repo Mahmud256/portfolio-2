@@ -1,16 +1,13 @@
 // Navbar.js
-import { useContext } from 'react';
-import ThemeContext from '../../providers/ThemeContext';
 import { FiSend } from 'react-icons/fi';
 import { Link } from 'react-scroll';
+import useTheme from '../../hook/useTheme';
+import Profile from '../Profile/Profile';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import ColorSelector from '../ColorSelector/ColorSelector';
 
 const Navbar = () => {
-    const { themeColor } = useContext(ThemeContext);
-
-    // Determine the hover background color based on themeColor
-    const hoverBgColor = themeColor.includes('blue') ? '#3b82f6' :
-        themeColor.includes('pink') ? '#ec4899' :
-            themeColor.includes('orange') ? '#f97316' : '#888';
+    const { themeColor, bgColor } = useTheme();
 
     // Reusable NavItem component for scroll links
     const NavItem = ({ to, label }) => (
@@ -28,7 +25,7 @@ const Navbar = () => {
                     color: themeColor,
                     backgroundColor: 'transparent',
                 }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = hoverBgColor}
+                onMouseEnter={(e) => e.target.style.backgroundColor = bgColor}
                 onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
             >
                 {label}
@@ -38,6 +35,11 @@ const Navbar = () => {
 
     return (
         <nav>
+            <Profile themeColor={themeColor} />
+            <div className="w-auto flex items-baseline justify-center p-4 gap-2 space-x-2">
+              <ThemeToggle />
+              <ColorSelector />
+            </div>
             <ul className="space-y-2 flex flex-col gap-3">
                 <NavItem to="home" label="Home" />
                 <NavItem to="services" label="Services" />
@@ -62,8 +64,8 @@ const Navbar = () => {
                         <span
                             className="absolute inset-0 w-0 h-full transition-all duration-300 ease-out bg-white rounded-full group-hover:w-full"
                             style={{
-                                backgroundColor: hoverBgColor,
-                                borderColor: hoverBgColor,
+                                backgroundColor: bgColor,
+                                borderColor: bgColor,
                             }}
                         ></span>
                         <span className="relative flex items-center text-white transition-colors duration-300 ease-in-out">

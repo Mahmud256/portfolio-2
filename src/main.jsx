@@ -5,12 +5,15 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
+import { ThemeProvider } from "./providers/ThemeContext";
 
 // Initialize AOS
 AOS.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );
