@@ -5,10 +5,14 @@ import Experience from '../../page/Experience/Experience';
 import Contact from '../../page/Contact/Contact';
 import Services from '../../page/Services/Services';
 import About from '../../page/About/About';
+import useTheme from '../../hook/useTheme';
 
 const Home = () => {
+    const { darkMode } = useTheme();
     return (
-        <div id="home" className={`flex flex-col justify-center items-center`}>
+        <div id="home" className={`flex flex-col justify-center items-center ${
+            darkMode === 'dark' ? 'bg-gray-800 text-white' : 'bg-neutral-100 text-gray-900'
+          }`}>
 
             <div className="">
                 <div className="max-w-screen-xl mx-auto">

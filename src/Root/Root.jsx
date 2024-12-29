@@ -33,7 +33,7 @@ const Root = () => {
 
       {/* Main Content */}
       <div
-        className="flex-1 lg:ml-72 lg:middle-container bg-neutral-50 text-gray-900"
+        className={`flex-1 lg:ml-72 lg:middle-container bg-neutral-50 text-gray-900`}
         style={{
           scrollbarColor: `${themeColor} transparent`,
           '--dynamic-scrollbar-color': colorMap[themeColor],
