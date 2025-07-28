@@ -34,19 +34,21 @@ const Navbar = () => {
     );
 
     return (
-        <nav>
+        <nav className=''>
+            {/* Menu Items */}
             <Profile themeColor={themeColor} />
             <div className="w-auto flex items-baseline justify-center p-4 gap-2 space-x-2">
-              <ThemeToggle />
-              <ColorSelector />
+                <ThemeToggle />
+                <ColorSelector />
             </div>
             <ul className="space-y-2 flex flex-col gap-3">
                 <NavItem to="home" label="Home" />
-                <NavItem to="services" label="Services" />
+                {/* <NavItem to="services" label="Services" /> */}
                 <NavItem to="project" label="Projects" />
                 <NavItem to="skill" label="Skills" />
                 <NavItem to="education" label="Education" />
                 <NavItem to="experience" label="Experience" />
+                <NavItem to="biodata" label="Bio Data" />
                 <NavItem to="contact" label="Contact" />
 
                 <Link

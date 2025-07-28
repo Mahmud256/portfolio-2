@@ -22,7 +22,7 @@ const About = () => {
                                     eraseDelay={1000} // delay before erasing
                                     typingDelay={500} // delay before starting the first animation
                                     cursorClassName={`${themeColor}`} // cursor styling with theme color
-                                    displayTextRenderer={(text, i) => <span>{text}</span>} // optional for custom rendering
+                                    displayTextRenderer={(text) => <span>{text}</span>} // optional for custom rendering
                                 />
                             </h1>
                             <p
@@ -40,21 +40,27 @@ const About = () => {
                                 >
                                     View Portfolio
                                 </button>
-                                <button
-                                    className={`rounded-2xl border-2 
-                                border-dashed px-6 py-3 font-semibold 
-                                uppercase transition-all duration-300 
-                                hover:translate-x-[-4px] 
-                                hover:translate-y-[-4px] hover:rounded-md active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none ${themeColor}`}
-                                    style={{
-                                        color: bgColor,
-                                        borderColor: bgColor,
-                                    }}
-                                    onMouseEnter={(e) => e.currentTarget.style.boxShadow = `4px 4px 0px ${bgColor}`}
-                                    onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 0 0'}
+                                <a
+                                    href="https://drive.google.com/file/d/1PBq0Pj6Yd62bdGnWeZAglU7H7Csw4Elf/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
-                                    View Resume
-                                </button>
+                                    <button
+                                        className={`rounded-2xl border-2 
+                                    border-dashed px-6 py-3 font-semibold 
+                                    uppercase transition-all duration-300 
+                                    hover:translate-x-[-4px] 
+                                    hover:translate-y[-4px] hover:rounded-md active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none ${themeColor}`}
+                                        style={{
+                                            color: bgColor,
+                                            borderColor: bgColor,
+                                        }}
+                                        onMouseEnter={(e) => e.currentTarget.style.boxShadow = `4px 4px 0px ${bgColor}`}
+                                        onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 0 0'}
+                                    >
+                                        View Resume
+                                    </button>
+                                </a>
                             </div>
                         </div>
 
@@ -72,8 +78,3 @@ const About = () => {
 };
 
 export default About;
-
-
-
-
-

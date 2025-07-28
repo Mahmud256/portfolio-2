@@ -11,7 +11,7 @@ const ColorSelector = () => {
     const [dropdownVisible, setDropdownVisible] = useState(false);
 
     return (
-        <div className="relative mt-6">
+        <div className="relative lg:mt-6">
             <button
                 onClick={() => setDropdownVisible(!dropdownVisible)}
                 className="p-3 rounded-full bg-gray-600 text-white flex items-center"

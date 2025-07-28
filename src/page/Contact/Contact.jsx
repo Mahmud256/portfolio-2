@@ -147,14 +147,14 @@ const Contact = () => {
                         <FaFacebook size="2em" className="mr-4" />
                     </a>
                     <a
-                        href="https://www.linkedin.com/in/mahmudul-hasan-sarkar-2b93581a6/"
+                        href="https://www.linkedin.com/in/mahmudul-hasan-sarkar-ba928836b/"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
                     >
                         <FaLinkedin size="2em" className="mr-4" />
                     </a>
-                    <a href="mailto:mahmud474849@gmail.com" aria-label="Email">
+                    <a href="mailto:mahmudul.hasan.mailbox@gmail.com" aria-label="Email">
                         <FaEnvelope size="2em" className="mr-4" />
                     </a>
                 </div>

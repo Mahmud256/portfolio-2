@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Root.css';
+import './Root.scss';
 import { Outlet } from 'react-router-dom';
 import ThemeContext from '../providers/ThemeContext'; // Only import the context
 import Navbar from '../components/Navbar/Navbar';
@@ -12,7 +12,7 @@ const Root = () => {
     <div className="flex">
       {/* Sidebar (Navbar) */}
       <div
-        className={`w-auto fixed middle-container overflow-y-auto p-6 max-h-screen ${
+        className={`w-auto fixed middle-container overflow-y-auto lg:p-6 p-4 max-h-screen ${
           darkMode === 'dark' ? 'bg-gray-800 text-white' : 'bg-neutral-100 text-gray-900'
         }`}
         style={{
@@ -21,12 +21,12 @@ const Root = () => {
         }}
       >
         {/* Navbar for larger screens */}
-        <div className="hidden sm:block">
+        <div className="lg:block hidden">
           <Navbar />
         </div>
 
         {/* Navbar for smaller screens */}
-        <div className="block sm:hidden">
+        <div className="lg:hidden">
           <MobileNavbar />
         </div>
       </div>

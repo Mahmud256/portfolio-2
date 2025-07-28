@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router-dom";
 import router from "./routes/Routes";
 import ReactDOM from 'react-dom/client'
 import './index.css'
+import './scss/main.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { ThemeProvider } from "./providers/ThemeContext";

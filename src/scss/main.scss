@@ -1,0 +1,55 @@
+@keyframes jumpAnimation {
+  40% {
+    transform: translateY(-5%);
+  }
+}
+
+@keyframes bgRotate {
+  0%,
+  100% {
+    transform: rotate(11.163deg);
+  }
+
+  50% {
+    transform: rotate(-11.163deg);
+  }
+}
+
+@keyframes lineSlide {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-jump {
+  animation: jumpAnimation 2s infinite;
+}
+
+.animate-rotate {
+  animation: bgRotate 10s infinite linear;
+}
+
+.underline {
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    background-color: currentColor;
+    animation: lineSlide 1.5s ease forwards;
+    opacity: 0;
+    width: 0;
+  }
+}
