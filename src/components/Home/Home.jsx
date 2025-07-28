@@ -4,7 +4,6 @@ import Education from '../../page/Education/Education';
 import Experience from '../../page/Experience/Experience';
 import BioData from '../../page/BioData/BioData'
 import Contact from '../../page/Contact/Contact';
-import Services from '../../page/Services/Services';
 import About from '../../page/About/About';
 import useTheme from '../../hook/useTheme';
 

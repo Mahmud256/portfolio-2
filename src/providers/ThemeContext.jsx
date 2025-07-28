@@ -20,8 +20,16 @@ export const ThemeProvider = ({ children }) => {
     const colorMap = {
         'text-blue-500': '#3b82f6',  // Blue
         'text-pink-500': '#ec4899',  // Pink
-        'text-orange-500': '#f97316' // Orange
+        'text-orange-500': '#f97316', // Orange
+        'text-green-500': '#22c55e',  // Green
+        'text-red-500': '#ef4444',    // Red
+        'text-purple-500': '#a855f7', // Purple
+        'text-yellow-500': '#eab308', // Yellow
+        'text-teal-500': '#14b8a6'    // Teal
     };
+
+    const bgColor = colorMap[themeColor] || '#888';
+
 
     // Effect to update the body's class when the theme changes
     useEffect(() => {
@@ -38,6 +46,33 @@ export const ThemeProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('themeColor', themeColor); // Update localStorage with the current theme color
     }, [themeColor]); // Trigger this effect whenever `themeColor` changes
+
+    // ✅ Inject scrollbar style on themeColor change
+    useEffect(() => {
+        let styleTagId = 'dynamic-scrollbar-style';
+        let styleTag = document.getElementById(styleTagId);
+
+        const scrollbarCSS = `
+            ::-webkit-scrollbar {
+                width: 6px;
+            }
+            ::-webkit-scrollbar-track {
+                background: white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: ${bgColor};
+            }
+                
+        `;
+
+        if (!styleTag) {
+            styleTag = document.createElement('style');
+            styleTag.id = styleTagId;
+            document.head.appendChild(styleTag);
+        }
+
+        styleTag.innerHTML = scrollbarCSS;
+    }, [bgColor]);
 
     // Function to toggle between light and dark modes
     const toggleDarkMode = () => {

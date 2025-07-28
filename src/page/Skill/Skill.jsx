@@ -37,7 +37,7 @@ const Skill = () => {
   /* Skill Progress Component */
   const SkillProgress = ({ skills, title }) => (
     <div
-      className={`max-w-full w-[820px] mx-auto mb-10 border p-6 shadow-md rounded-lg ${darkMode === "dark"
+      className={`max-w-full w-[820px] mx-auto mb-10 border p-6 shadow-md ${darkMode === "dark"
         ? "bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900"
         : "bg-gradient-to-br from-white via-gray-100 to-gray-200"
         } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl}`}

@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
-import './Root.scss';
 import { Outlet } from 'react-router-dom';
 import ThemeContext from '../providers/ThemeContext'; // Only import the context
 import Navbar from '../components/Navbar/Navbar';
 import MobileNavbar from '../components/MobileNavbar/MobileNavbar';
 
 const Root = () => {
-  const { darkMode, themeColor, colorMap } = useContext(ThemeContext);
+  const { darkMode} = useContext(ThemeContext);
 
   return (
     <div className="flex">
@@ -15,10 +14,6 @@ const Root = () => {
         className={`w-auto fixed middle-container overflow-y-auto lg:p-6 p-4 max-h-screen ${
           darkMode === 'dark' ? 'bg-gray-800 text-white' : 'bg-neutral-100 text-gray-900'
         }`}
-        style={{
-          scrollbarColor: `${themeColor} transparent`,
-          '--dynamic-scrollbar-color': colorMap[themeColor],
-        }}
       >
         {/* Navbar for larger screens */}
         <div className="lg:block hidden">
@@ -34,10 +29,6 @@ const Root = () => {
       {/* Main Content */}
       <div
         className={`flex-1 lg:ml-72 lg:middle-container bg-neutral-50 text-gray-900`}
-        style={{
-          scrollbarColor: `${themeColor} transparent`,
-          '--dynamic-scrollbar-color': colorMap[themeColor],
-        }}
       >
         <Outlet />
       </div>

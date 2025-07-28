@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import useTheme from '../../hook/useTheme';
-import useFadeInOnView from '../../hook/useFadeInOnView';
-import useFlipAnimation from '../../hook/useFlipAnimation';
+import useFlipDirection from '../../hook/useFlipDirection';
 
 import img1 from '../../assets/banner-1.png';
 import img2 from '../../assets/banner-2.png';
@@ -13,7 +12,7 @@ import img7 from '../../assets/banner-7.jpg';
 
 const Project = () => {
   const { darkMode, themeColor, bgColor } = useTheme();
-  const fadeVariant = useFadeInOnView();
+
 
   const projects = [
     { id: 1, title: 'Online Gift Shop', img: img2, link: 'https://online-gift-shop-a4212.web.app/' },
@@ -26,13 +25,10 @@ const Project = () => {
   ];
 
   return (
-    <motion.div
+    <div
       id="project"
       className="mt-20"
-      variants={fadeVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      data-aos="zoom-in"
     >
       <div className="text-center mb-10">
         <h2 className={`text-4xl font-bold ${darkMode === 'dark' ? 'text-white' : 'text-[#15295f]'}`}>
@@ -42,8 +38,7 @@ const Project = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-24 lg:mx-14">
         {projects.map((project) => {
-          // ✅ call useFlipAnimation() for each card, passing even/odd check
-          const flipVariant = useFlipAnimation(project.id % 2 === 0);
+          const flipVariant = useFlipDirection(project.id % 2 === 0 ? 'left' : 'right');
 
           return (
             <motion.div
@@ -55,9 +50,9 @@ const Project = () => {
               variants={flipVariant}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.2 }}
-              style={{ perspective: '1000px' }}
+              viewport={{ once: false }}
             >
+
               <figure className="overflow-hidden">
                 <motion.img
                   className="w-full h-40 object-cover"
@@ -93,7 +88,7 @@ const Project = () => {
           );
         })}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
