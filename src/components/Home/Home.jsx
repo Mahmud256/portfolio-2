@@ -8,13 +8,12 @@ import About from '../../page/About/About';
 import useTheme from '../../hook/useTheme';
 import ScrollToTop from '../../hook/ScrollToTop ';
 
-
 const Home = () => {
     const { darkMode } = useTheme();
+   
     return (
-        <div id="home" className={`flex flex-col justify-center items-center ${
-            darkMode === 'dark' ? 'bg-gray-800 text-white' : 'bg-neutral-100 text-gray-900'
-          }`}>
+        <div id="home" className={`flex flex-col justify-center items-center ${darkMode === 'dark' ? 'bg-gray-800 text-white' : 'bg-neutral-100 text-gray-900'
+            }`}>
 
             {/* Scroll to Top Button */}
             <ScrollToTop />

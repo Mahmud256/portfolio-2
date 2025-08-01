@@ -1,8 +1,10 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 import useTheme from '../../hook/useTheme';
+import useFadeDirection from '../../hook/useFadeDirection';
 
 const BioData = () => {
     const { darkMode } = useTheme();
+    const fadeUp = useFadeDirection("up");
 
     return (
         <div id='biodata'>
@@ -10,7 +12,7 @@ const BioData = () => {
                 <div
                     className={`max-w-full w-[820px] mx-auto p-4 border shadow-md ${darkMode === 'dark'
                         ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
-                        : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
+                        : 'bg-white'
                         } shadow-lg transform transition-transform duration-500 hover:scale-105 hover:shadow-xl`}
                 >
                     <h2
@@ -20,8 +22,13 @@ const BioData = () => {
                         Bio Data
                     </h2>
 
-                    <div className={`text-base space-y-2 ${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                        }`}>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className={`text-base space-y-2 ${darkMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}
+                    >
 
                         {/* Personal Information */}
                         <p><strong>Full Name:</strong> Mahmudul Hasan Sarkar</p>
@@ -34,6 +41,8 @@ const BioData = () => {
                         <p><strong>Nationality:</strong> Bangladeshi</p>
                         <p><strong>Marital Status:</strong> Unmarried</p>
                         <p><strong>Email:</strong> mahmudul.hasan.mailbox@gmail.com</p>
+                        <p><strong>Facebook:</strong> https://www.facebook.com/mahmudul.hasan.sarkar/</p>
+                        <p><strong>Portfolio:</strong> https://mahmudul-hasan-sarkar-portfolio.netlify.app/</p>
                         <h3 className="pt-6 font-semibold text-lg underline">Contact Addresses:</h3>
                         <table className="table-auto w-full text-left border mb-4">
                             <thead>
@@ -65,7 +74,7 @@ const BioData = () => {
                                 </tr>
                             </tbody>
                         </table>
-                       
+
                         {/* Education */}
                         <h3 className="pt-6 font-semibold text-lg underline">Educational Qualification:</h3>
                         <table className="table-auto w-full text-left border mt-2">
@@ -137,7 +146,7 @@ const BioData = () => {
                             <li>Occupation: Student / Homemaker / Working (optional)</li>
                         </ul> */}
 
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

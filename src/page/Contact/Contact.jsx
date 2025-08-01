@@ -5,7 +5,7 @@ import useTheme from '../../hook/useTheme';
 const VITE_web3forms_Token = import.meta.env.VITE_web3forms_Token;
 
 const Contact = () => {
-    const { darkMode, themeColor } = useTheme();
+    const { darkMode, themeColor, bgColor } = useTheme();
 
     const [formData, setFormData] = useState({
         name: '',
@@ -61,14 +61,6 @@ const Contact = () => {
 
 
     };
-
-    const bgColor = themeColor.includes('blue')
-        ? '#3b82f6'
-        : themeColor.includes('pink')
-            ? '#ec4899'
-            : themeColor.includes('orange')
-                ? '#f97316'
-                : '#888';
 
     return (
         <div data-aos="fade-up" id="contact" className="pb-20">

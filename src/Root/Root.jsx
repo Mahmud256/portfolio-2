@@ -11,7 +11,7 @@ const Root = () => {
     <div className="flex">
       {/* Sidebar (Navbar) */}
       <div
-        className={`w-auto fixed middle-container overflow-y-auto lg:p-6 p-4 max-h-screen ${
+        className={`fixed middle-container overflow-y-auto w-72 p-4 h-screen ${
           darkMode === 'dark' ? 'bg-gray-800 text-white' : 'bg-neutral-100 text-gray-900'
         }`}
       >
