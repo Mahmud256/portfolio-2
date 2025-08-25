@@ -43,15 +43,24 @@ const Project = () => {
           return (
             <motion.div
               key={project.id}
-              className={`card card-compact w-96 border ${darkMode === 'dark'
-                ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
-                : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
+              className={`card card-compact w-96 border transition-transform duration-300 ease-in-out ${darkMode === 'dark'
+                  ? 'bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900'
+                  : 'bg-gradient-to-br from-white via-gray-100 to-gray-200'
                 } shadow-lg hover:scale-110 hover:shadow-xl`}
               variants={flipVariant}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.border = `1px solid ${bgColor}`;
+                e.currentTarget.style.boxShadow = '0 12px 40px #00000029'; // optional shadow on hover
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.border = '';
+                e.currentTarget.style.boxShadow = '';
+              }}
             >
+
 
               <figure className="overflow-hidden">
                 <motion.img

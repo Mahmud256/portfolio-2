@@ -50,11 +50,11 @@ const Home = () => {
                     <Experience />
                 </div>
             </div>
-            <div className="">
+            {/* <div className="">
                 <div className="max-w-screen-xl mx-auto">
                     <BioData />
                 </div>
-            </div>
+            </div> */}
             <div className="">
                 <div className="max-w-screen-xl mx-auto">
                     <Contact />

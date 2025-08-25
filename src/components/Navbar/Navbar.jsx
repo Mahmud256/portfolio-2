@@ -48,7 +48,7 @@ const Navbar = () => {
                 <NavItem to="skill" label="Skills" />
                 <NavItem to="education" label="Education" />
                 <NavItem to="experience" label="Experience" />
-                <NavItem to="biodata" label="Bio Data" />
+                {/* <NavItem to="biodata" label="Bio Data" /> */}
                 <NavItem to="contact" label="Contact" />
 
                 <Link
